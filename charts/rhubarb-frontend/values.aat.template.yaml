@@ -1,0 +1,3 @@
+nodejs:
+  environment:
+    RECIPE_BACKEND_URL: "http://rhubarb-recipe-backend-aat.service.core-compute-aat.internal"

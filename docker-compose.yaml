@@ -1,0 +1,45 @@
+---
+version: '2.2'
+
+services:
+  rhubarb-frontend:
+    build:
+      context: .
+    cpus: 0.2
+    mem_limit: 128M
+    environment:
+      RECIPE_BACKEND_URL: http://rhubarb-recipes-service:4550
+    ports:
+      - 1337:1337
+    depends_on:
+      - rhubarb-recipes-service
+  rhubarb-recipes-service:
+    image: hmcts.azurecr.io/hmcts/rhubarb-recipe-backend:latest
+    mem_limit: 1024M
+    environment:
+      POSTGRES_HOST: database
+      POSTGRES_DATABASE: rhubarb
+      POSTGRES_USER: rhubarb
+      POSTGRES_PASSWORD: rhubarb
+      POSTGRES_CONNECTION_OPTIONS:
+      JAVA_OPTS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1
+    ports:
+      - 4550:4550
+    depends_on:
+      database:
+        condition: service_healthy
+  database:
+    image: postgres:9.6-alpine
+    restart: always
+    command: postgres -c 'max_connections=250'
+    volumes:
+      - ./docker/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+      - database-data:/var/lib/postgresql/data
+    healthcheck:
+      test: psql -c 'select 1' -d postgres -U postgres
+      retries: 40
+    mem_limit: 320m
+    memswap_limit: 0
+
+volumes:
+  database-data:

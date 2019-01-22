@@ -1,0 +1,4 @@
+nodejs:
+  applicationPort: 1337
+  image: ${IMAGE_NAME}
+  ingressHost: ${SERVICE_FQDN}

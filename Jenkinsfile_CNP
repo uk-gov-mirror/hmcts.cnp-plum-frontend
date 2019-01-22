@@ -1,0 +1,14 @@
+#!groovy
+
+@Library("Infrastructure")
+
+def product = "plum"
+def component = "frontend"
+
+withPipeline("nodejs", product, component) {
+  enableDockerBuild()
+  installCharts()
+  after('checkout') {
+    echo 'plum-frontend checked out'
+  }
+}
