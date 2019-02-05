@@ -1,11 +1,11 @@
-const rp = require("request-promise");
-const { Logger } = require("@hmcts/nodejs-logging");
+const rp = require('request-promise');
+const { Logger } = require('@hmcts/nodejs-logging');
 const { RECIPE_BACKEND_URL } = process.env;
 
-const logger = Logger.getLogger("index.js");
+const logger = Logger.getLogger('index.js');
 
 const get = async (req, res) => {
-  logger.info({ message: "Yay, logging!" });
+  logger.info({ message: 'Yay, logging!' });
 
   const options = {
     uri: `${RECIPE_BACKEND_URL}/recipes`,
@@ -14,12 +14,12 @@ const get = async (req, res) => {
 
   try {
     const { recipes } = await rp(options);
-    return res.render("index", { recipes });
+    return res.render('index', { recipes });
   } catch (err) {
     logger.error(err.stack);
     return res
       .status(500)
-      .render("error", { message: "Problem communicating with backend" });
+      .render('error', { message: 'Problem communicating with backend' });
   }
 };
 

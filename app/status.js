@@ -1,5 +1,5 @@
-const { version } = require("../package.json");
-const redis = require("ioredis");
+const { version } = require('../package.json');
+const redis = require('ioredis');
 const { REDIS_HOST, REDIS_PORT, REDIS_PASSWORD } = process.env;
 
 const get = (req, res) => {
@@ -12,14 +12,14 @@ const get = (req, res) => {
     });
     client.ping((err, result) =>
       res.send({
-        api: "ok",
+        api: 'ok',
         version,
         redis: result || err
       })
     );
   } else {
     res.send({
-      api: "ok",
+      api: 'ok',
       version,
       env: process.env
     });

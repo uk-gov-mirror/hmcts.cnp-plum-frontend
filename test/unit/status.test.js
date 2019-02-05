@@ -1,12 +1,12 @@
-const sinon = require("sinon");
-const chai = require("chai");
+const sinon = require('sinon');
+const chai = require('chai');
 const expect = chai.expect;
 
-const status = require("../../app/status");
+const status = require('../../app/status');
 
-describe("Routes", () => {
-  describe("GET Status", () => {
-    it("should respond", () => {
+describe('Routes', () => {
+  describe('GET Status', () => {
+    it('should respond', () => {
       let req, res, spy;
 
       req = res = {};
