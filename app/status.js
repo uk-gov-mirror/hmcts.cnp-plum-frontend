@@ -11,14 +11,14 @@ const get = (req, res) => {
       tls: true
     });
     client.ping((err, result) =>
-      res.send({
+      res.json({
         api: 'ok',
         version,
         redis: result || err
       })
     );
   } else {
-    res.send({
+    res.json({
       api: 'ok',
       version,
       env: process.env
