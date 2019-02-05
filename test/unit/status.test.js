@@ -1,22 +1,20 @@
-var sinon = require('sinon');
-var chai = require('chai');
-var expect = chai.expect;
+const sinon = require("sinon");
+const chai = require("chai");
+const expect = chai.expect;
 
-var status = require('../../app/status');
+const status = require("../../app/status");
 
-describe('Routes', function() {
-  describe('GET Status', function() {
+describe("Routes", () => {
+  describe("GET Status", () => {
+    it("should respond", () => {
+      let req, res, spy;
 
-      it('should respond', function() {
-        var req,res,spy;
+      req = res = {};
+      spy = res.send = sinon.spy();
 
-        req = res = {};
-        spy = res.send = sinon.spy();
+      status(req, res);
 
-        status(req, res);
-
-        expect(spy.calledOnce).to.equal(true);
-      });     
-
+      expect(spy.calledOnce).to.equal(true);
+    });
   });
 });
