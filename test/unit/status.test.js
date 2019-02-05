@@ -10,7 +10,7 @@ describe('Routes', () => {
       let req, res, spy;
 
       req = res = {};
-      spy = res.send = sinon.spy();
+      spy = res.send = res.json = sinon.spy();
 
       status(req, res);
 
