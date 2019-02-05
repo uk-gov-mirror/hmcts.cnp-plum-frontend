@@ -1,22 +1,36 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
     "node": true,
     "jquery": true,
     "mocha": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 8
   },
-  "plugins": ["mocha"],
+  "plugins": [
+    "mocha"
+  ],
   "rules": {
     "no-console": 0,
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "comma-dangle": ["error", "never"],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
     "eqeqeq": "error",
     "require-yield": "off",
     "mocha/no-exclusive-tests": "error"
