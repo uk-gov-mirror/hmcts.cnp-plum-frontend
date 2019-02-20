@@ -26,6 +26,7 @@ def product = "crumble"
 def app = "frontend"
 
 withPipeline(type, product, app) {
-  enableDockerBuild()
-  enableDeployToAKS()
+// disabled while fixing docker builds on sandbox
+//  enableDockerBuild()
+//  enableDeployToAKS()
 }
