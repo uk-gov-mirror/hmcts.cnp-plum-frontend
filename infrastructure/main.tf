@@ -24,8 +24,6 @@ module "frontend" {
   additional_host_name = "${var.product}.platform.hmcts.net"
   common_tags          = "${var.common_tags}"
 
-  asp_name = "${var.product}"
-
   app_settings                         = {
     # REDIS_HOST                       = "${module.redis-cache.host_name}"
     # REDIS_PORT                       = "${module.redis-cache.redis_port}"
