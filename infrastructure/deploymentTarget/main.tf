@@ -41,7 +41,7 @@ module "frontend" {
     # REDIS_PORT                       = "${module.redis-cache.redis_port}"
     # REDIS_PASSWORD                   = "${module.redis-cache.access_key}"
     RECIPE_BACKEND_URL                 = "${local.recipe_backend_url}"
-    WEBSITE_NODE_DEFAULT_VERSION       = "8.8.0"
+    WEBSITE_NODE_DEFAULT_VERSION       = "8.10.0"
     WEBSITE_PROACTIVE_AUTOHEAL_ENABLED = "${var.autoheal}"
   }
 }
