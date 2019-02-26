@@ -5,7 +5,7 @@
 def product = "plum"
 def component = "frontend"
 
-List<LinkedHashMap<String, Object>> secrets = [ 'plumsi-${env}':
+def secrets = [ 'plumsi-${env}':
   [
     secret('AppInsightsInstrumentationKey', 'APPINSIGHTS_INSTRUMENTATIONKEY')
   ]
