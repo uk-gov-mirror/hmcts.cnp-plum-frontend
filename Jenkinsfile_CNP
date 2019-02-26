@@ -5,8 +5,10 @@
 def product = "plum"
 def component = "frontend"
 
-List<LinkedHashMap<String, Object>> secrets = [
-  secret('AppInsightsInstrumentationKey', 'APPINSIGHTS_INSTRUMENTATIONKEY')
+List<LinkedHashMap<String, Object>> secrets = [ 'plumsi-${env}':
+  [
+    secret('AppInsightsInstrumentationKey', 'APPINSIGHTS_INSTRUMENTATIONKEY')
+  ]
 ]
 
 static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
@@ -25,6 +27,5 @@ withPipeline("nodejs", product, component) {
   after('checkout') {
     echo 'plum-frontend checked out'
   }
-  setVaultName(product)
   loadVaultSecrets(secrets)
 }
