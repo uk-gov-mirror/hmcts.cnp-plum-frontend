@@ -8,24 +8,26 @@ const { APPINSIGHTS_INSTRUMENTATIONKEY } = process.env;
 const status = require('./app/status');
 const index = require('./app/index');
 
-if (APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
-    appInsights
-        .setup(APPINSIGHTS_INSTRUMENTATIONKEY)
-        .setAutoDependencyCorrelation(true)
-        .setAutoCollectRequests(true)
-        .setAutoCollectPerformance(true)
-        .setAutoCollectExceptions(true)
-        .setAutoCollectDependencies(true)
-        .setAutoCollectConsole(true)
-        .setUseDiskRetryCaching(true)
-        .start();
+{/* istanbul ignore next */
+    if (APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
+        appInsights
+            .setup(APPINSIGHTS_INSTRUMENTATIONKEY)
+            .setAutoDependencyCorrelation(true)
+            .setAutoCollectRequests(true)
+            .setAutoCollectPerformance(true)
+            .setAutoCollectExceptions(true)
+            .setAutoCollectDependencies(true)
+            .setAutoCollectConsole(true)
+            .setUseDiskRetryCaching(true)
+            .start();
 
-    const client = appInsights.defaultClient;
-    const PERIOD = 30000; // 30 seconds
+        const client = appInsights.defaultClient;
+        const PERIOD = 30000; // 30 seconds
 
-    setInterval(() => {
-        client.trackEvent({ name: 'ping', properties: { timestamp: Date.now().toString() } });
-    }, PERIOD);
+        setInterval(() => {
+            client.trackEvent({ name: 'ping', properties: { timestamp: Date.now().toString() } });
+        }, PERIOD);
+    }
 }
 
 const app = express();
