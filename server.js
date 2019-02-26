@@ -24,7 +24,7 @@ if (APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
     const PERIOD = 30000; // 30 seconds
 
     setInterval(() => {
-        client.trackEvent({ name: "ping", properties: { timestamp: Date.now().toString() } });
+        client.trackEvent({ name: 'ping', properties: { timestamp: Date.now().toString() } });
     }, PERIOD);
 }
 
