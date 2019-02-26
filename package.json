@@ -24,7 +24,7 @@
     "applicationinsights": "^1.2.0",
     "cross-env": "^5.0.5",
     "express": "^4.14.0",
-    "express-jade": "0.0.3",
+    "pug": "^2.0.3",
     "request": "2.88.0",
     "request-promise": "4.2.2"
   },
