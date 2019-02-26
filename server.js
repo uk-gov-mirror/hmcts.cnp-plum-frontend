@@ -19,6 +19,13 @@ if (APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
         .setAutoCollectConsole(true)
         .setUseDiskRetryCaching(true)
         .start();
+
+    const client = appInsights.defaultClient;
+    const PERIOD = 30000; // 30 seconds
+
+    setInterval(() => {
+        client.trackEvent({ name: "ping", properties: { timestamp: Date.now().toString() } });
+    }, PERIOD);
 }
 
 const app = express();
