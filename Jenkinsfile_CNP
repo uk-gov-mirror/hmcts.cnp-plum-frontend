@@ -25,5 +25,6 @@ withPipeline("nodejs", product, component) {
   after('checkout') {
     echo 'plum-frontend checked out'
   }
+  setVaultName(product)
   loadVaultSecrets(secrets)
 }
