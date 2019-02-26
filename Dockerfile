@@ -1,4 +1,5 @@
-FROM hmcts.azurecr.io/hmcts/base/node/alpine-lts-10 as base
+ARG REGISTRY_NAME=hmcts
+FROM ${REGISTRY_NAME}.azurecr.io/hmcts/base/node/alpine-lts-10 as base
 COPY package.json yarn.lock ./
 RUN yarn install --production
 
