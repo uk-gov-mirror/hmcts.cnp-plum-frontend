@@ -1,11 +1,25 @@
 
+const appInsights = require('applicationinsights');
 const express = require('express');
+const path = require('path');
 const { Express, Logger } = require('@hmcts/nodejs-logging');
+const { APPINSIGHTS_INSTRUMENTATIONKEY } = process.env;
 
-var path = require('path');
+const status = require('./app/status');
+const index = require('./app/index');
 
-var status = require('./app/status');
-var index = require('./app/index');
+if (APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
+    appInsights
+        .setup(APPINSIGHTS_INSTRUMENTATIONKEY)
+        .setAutoDependencyCorrelation(true)
+        .setAutoCollectRequests(true)
+        .setAutoCollectPerformance(true)
+        .setAutoCollectExceptions(true)
+        .setAutoCollectDependencies(true)
+        .setAutoCollectConsole(true)
+        .setUseDiskRetryCaching(true)
+        .start();
+}
 
 const app = express();
 
@@ -17,10 +31,8 @@ app.use('/health', status);
 app.use('/', index);
 
 const logger = Logger.getLogger('server.js');
-
-var port = process.env.PORT || 1337;
-
-var server = app.listen(port, function () {
+const port = process.env.PORT || 1337;
+const server = app.listen(port, () => {
     logger.info(`Listening on port ${port}`);
 });
 
