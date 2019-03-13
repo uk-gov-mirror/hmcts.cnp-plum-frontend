@@ -3,10 +3,18 @@ const appInsights = require('applicationinsights');
 const express = require('express');
 const path = require('path');
 const { Express, Logger } = require('@hmcts/nodejs-logging');
-const healthcheck = require('@hmcts/nodejs-healthcheck');
 const { APPINSIGHTS_INSTRUMENTATIONKEY } = process.env;
 
 const index = require('./app/index');
+
+const healthCheck = require('@hmcts/nodejs-healthcheck');
+
+let healthConfig = {
+    checks: {},
+    buildInfo: {
+        'cnp-plum': 'cnp-plum-frontend'
+    }
+};
 
 {/* istanbul ignore next */
     if (APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
@@ -31,27 +39,23 @@ const index = require('./app/index');
 }
 
 const app = express();
+const appHealth = express();
 
+healthCheck.addTo(appHealth, healthConfig);
 app.set('views', path.join(__dirname, 'views'));
+
 app.set('view engine', 'pug');
-
 app.use(Express.accessLogger());
+app.use(appHealth);
 app.use('/', index);
-
-healthcheck.addTo(app,
-    {
-        checks: {},
-        buildInfo: {
-            'cnp-plum-frontend': 'cnp-plum-frontend'
-        }
-    });
 
 const logger = Logger.getLogger('server.js');
 const port = process.env.PORT || 1337;
-app.listen(port, () => {
+const server = app.listen(port, () => {
     logger.info(`Listening on port ${port}`);
 });
 
 module.exports = {
-    'app' : app
+    app,
+    server
 };
