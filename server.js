@@ -5,8 +5,16 @@ const path = require('path');
 const { Express, Logger } = require('@hmcts/nodejs-logging');
 const { APPINSIGHTS_INSTRUMENTATIONKEY } = process.env;
 
-const status = require('./app/status');
 const index = require('./app/index');
+
+const healthCheck = require('@hmcts/nodejs-healthcheck');
+
+let healthConfig = {
+    checks: {},
+    buildInfo: {
+        'cnp-plum': 'cnp-plum-frontend'
+    }
+};
 
 {/* istanbul ignore next */
     if (APPINSIGHTS_INSTRUMENTATIONKEY !== undefined) {
@@ -31,12 +39,14 @@ const index = require('./app/index');
 }
 
 const app = express();
+const appHealth = express();
 
+healthCheck.addTo(appHealth, healthConfig);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
 
+app.set('view engine', 'pug');
 app.use(Express.accessLogger());
-app.use('/health', status);
+app.use(appHealth);
 app.use('/', index);
 
 const logger = Logger.getLogger('server.js');
