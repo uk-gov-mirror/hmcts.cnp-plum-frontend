@@ -1,7 +1,7 @@
-name: rhubarb-frontend
-home: https://github.com/hmcts/cnp-rhubarb-frontend
+name: plum-frontend
+home: https://github.com/hmcts/cnp-plum-frontend
 version: 0.0.2
-description: HMCTS Rhubarb frontend application (test application)
+description: HMCTS Plum frontend application (test application)
 maintainers:
   - name: HMCTS CNP Team
     email: cnpteam@hmcts.net
