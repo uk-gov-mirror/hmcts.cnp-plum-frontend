@@ -22,10 +22,6 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
 
 withPipeline("nodejs", product, component) {
   enableDockerBuild()
-  disableLegacyDeployment()
-  //installCharts()
-  after('checkout') {
-    echo 'plum-frontend checked out'
-  }
+  installCharts()
   loadVaultSecrets(secrets)
 }

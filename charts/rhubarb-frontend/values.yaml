@@ -1,3 +1,0 @@
-nodejs:
-  applicationPort: 1337
-  image: 'https://hmcts.azurecr.io/hmcts/plum-frontend:latest'
