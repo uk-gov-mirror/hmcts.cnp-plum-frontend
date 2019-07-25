@@ -8,13 +8,13 @@ services:
     cpus: 0.2
     mem_limit: 128M
     environment:
-      RECIPE_BACKEND_URL: http://rhubarb-recipes-service:4550
+      RECIPE_BACKEND_URL: http://plum-recipes-service:4550
     ports:
       - 1337:1337
     depends_on:
       - rhubarb-recipes-service
-  rhubarb-recipes-service:
-    image: hmcts.azurecr.io/hmcts/rhubarb-recipe-backend:latest
+  plum-recipes-service:
+    image: hmctspublic.azurecr.io/plum/recipe-backend:latest
     mem_limit: 1024M
     environment:
       POSTGRES_HOST: database
@@ -22,7 +22,6 @@ services:
       POSTGRES_USER: rhubarb
       POSTGRES_PASSWORD: rhubarb
       POSTGRES_CONNECTION_OPTIONS:
-      JAVA_OPTS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1
     ports:
       - 4550:4550
     depends_on:
