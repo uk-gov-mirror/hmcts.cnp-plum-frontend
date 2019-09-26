@@ -2,7 +2,7 @@
 const appInsights = require('applicationinsights');
 const express = require('express');
 const path = require('path');
-const { Express, Logger } = require('@hmcts/nodejs-logging');
+const { Logger } = require('@hmcts/nodejs-logging');
 const { APPINSIGHTS_INSTRUMENTATIONKEY } = process.env;
 
 const index = require('./app/index');
