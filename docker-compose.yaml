@@ -2,7 +2,7 @@
 version: '2.2'
 
 services:
-  rhubarb-frontend:
+  plum-frontend:
     build:
       context: .
     cpus: 0.2
@@ -12,31 +12,30 @@ services:
     ports:
       - 1337:1337
     depends_on:
-      - rhubarb-recipes-service
+      - plum-recipes-service
   plum-recipes-service:
     image: hmctspublic.azurecr.io/plum/recipe-backend:latest
     mem_limit: 1024M
     environment:
       POSTGRES_HOST: database
-      POSTGRES_DATABASE: rhubarb
-      POSTGRES_USER: rhubarb
-      POSTGRES_PASSWORD: rhubarb
-      POSTGRES_CONNECTION_OPTIONS:
+      POSTGRES_DATABASE: plum
+      POSTGRES_USER: plum
+      POSTGRES_PASSWORD: plum
+      POSTGRES_SSL_MODE: disable
     ports:
       - 4550:4550
     depends_on:
-      database:
-        condition: service_healthy
+      - database
   database:
-    image: postgres:9.6-alpine
-    restart: always
-    command: postgres -c 'max_connections=250'
+    image: postgres:10-alpine
+    environment:
+      POSTGRES_USER: plum
+      POSTGRES_PASSWORD: plum
+      POSTGRES_DB: plum
     volumes:
-      - ./docker/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
       - database-data:/var/lib/postgresql/data
-    healthcheck:
-      test: psql -c 'select 1' -d postgres -U postgres
-      retries: 40
+    ports:
+      - 5555:5432
     mem_limit: 320m
     memswap_limit: 0
 

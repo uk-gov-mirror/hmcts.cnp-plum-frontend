@@ -25,8 +25,9 @@ let healthConfig = {
             .setAutoCollectPerformance(true)
             .setAutoCollectExceptions(true)
             .setAutoCollectDependencies(true)
-            .setAutoCollectConsole(true)
             .setUseDiskRetryCaching(true)
+            .setDistributedTracingMode(appInsights.DistributedTracingModes.AI_AND_W3C)
+            .setSendLiveMetrics(true)
             .start();
 
         const client = appInsights.defaultClient;
@@ -45,7 +46,7 @@ healthCheck.addTo(appHealth, healthConfig);
 app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'pug');
-app.use(Express.accessLogger());
+// app.use(Express.accessLogger());
 app.use(appHealth);
 app.use('/', index);
 
