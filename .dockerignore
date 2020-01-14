@@ -1,4 +1,4 @@
-charts
-infrastructure
-node_modules
-.scannerwork
+charts/
+infrastructure/
+node_modules/
+.scannerwork/

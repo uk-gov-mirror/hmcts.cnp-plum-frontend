@@ -5,7 +5,7 @@ const { RECIPE_BACKEND_URL } = process.env;
 const logger = Logger.getLogger('index.js');
 
 const get = async (req, res) => {
-  logger.info({ message: 'Yay, logging!' });
+  logger.info('Yay, logging!');
 
   const options = {
     uri: `${RECIPE_BACKEND_URL}/recipes`,

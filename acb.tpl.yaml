@@ -1,14 +1,14 @@
 version: 1.0-preview-1
 steps:
   - id: pull-base
-    cmd: docker pull {{.Run.Registry}}/cnp/plum-frontend/base:latest || true
+    cmd: docker pull {{.Run.Registry}}/plum/frontend/base:latest || true
     when: ["-"]
     keep: true
 
   - id: base
     build: >
-      -t {{.Run.Registry}}/cnp/plum-frontend/base
-      --cache-from {{.Run.Registry}}/cnp/plum-frontend/base:latest
+      -t {{.Run.Registry}}/plum/frontend/base
+      --cache-from {{.Run.Registry}}/plum/frontend/base:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
       --target base
       .
@@ -19,7 +19,7 @@ steps:
   - id: runtime
     build: >
       -t {{.Run.Registry}}/{{CI_IMAGE_TAG}}
-      --cache-from {{.Run.Registry}}/cnp/plum-frontend/base:latest
+      --cache-from {{.Run.Registry}}/plum/frontend/base:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
       --target runtime
       .
@@ -29,7 +29,7 @@ steps:
 
   - id: push-images
     push:
-      - "{{.Run.Registry}}/cnp/plum-frontend/base:latest"
+      - "{{.Run.Registry}}/plum/frontend/base:latest"
       - "{{.Run.Registry}}/{{CI_IMAGE_TAG}}"
     when:
       - runtime
