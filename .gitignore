@@ -38,6 +38,7 @@ jspm_packages
 
 # IntelliJ files
 .idea
+*.iml
 
 # Sonar files
 .scannerwork
