@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure")
+@Library("Infrastructure@dependabot-hr-uninstall")
 
 def product = "plum"
 def component = "frontend"
