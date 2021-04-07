@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure@use-upstream-sonar")
+@Library("Infrastructure")
 
 def product = "plum"
 def component = "frontend"
