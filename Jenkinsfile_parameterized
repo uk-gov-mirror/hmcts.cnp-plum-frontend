@@ -1,5 +1,5 @@
 #!groovy
-@Library(value="Infrastructure@update_image_tagging_test", changelog=false)
+@Library(value="Infrastructure", changelog=false)
 
 List<LinkedHashMap<String, Object>> apiTestSecrets = [
   secret('test-client-key-store', 'TEST_CLIENT_KEY_STORE'),
