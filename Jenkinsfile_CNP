@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure@update_image_tagging_test")
+@Library("Infrastructure")
 
 def product = "plum"
 def component = "frontend"
