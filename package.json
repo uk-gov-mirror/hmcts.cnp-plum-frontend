@@ -24,7 +24,7 @@
     "@hmcts/nodejs-healthcheck": "^1.7.0",
     "@hmcts/nodejs-logging": "^3.0.0",
     "applicationinsights": "1.8.8",
-    "applicationinsights-native-metrics": "0.0.6",
+    "applicationinsights-native-metrics": "^0.0.5",
     "cross-env": "^7.0.0",
     "express": "^4.14.0",
     "pug": "^3.0.0",
@@ -32,7 +32,7 @@
     "request-promise": "4.2.6"
   },
   "resolutions": {
-    "applicationinsights-native-metrics/node-pre-gyp/tar": "6.1.1"
+    "applicationinsights-native-metrics/node-pre-gyp/tar": "4.4.15"
   },
   "devDependencies": {
     "chai": "^4.2.0",
