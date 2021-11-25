@@ -19,7 +19,7 @@ let healthConfig = {
 };
 
 {/* istanbul ignore next */
-    if (appInsightsKey !== 'fake') { {
+    if (appInsightsKey !== 'fake') {
         appInsights
             .setup(appInsightsKey)
             .setAutoDependencyCorrelation(true)
