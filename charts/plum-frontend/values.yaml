@@ -1,7 +1,7 @@
 nodejs:
   applicationPort: 1337
   image: 'hmctspublic.azurecr.io/plum/frontend:latest'
-  aadIdentityName: plum
+  aadIdentityName: cnp
   environment:
     RECIPE_BACKEND_URL: http://plum-recipe-backend-java
   keyVaults:
