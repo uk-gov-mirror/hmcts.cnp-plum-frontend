@@ -4,7 +4,3 @@ nodejs:
   aadIdentityName: cnp
   environment:
     RECIPE_BACKEND_URL: http://plum-recipe-backend-java
-  keyVaults:
-    "crumblesi":
-      secrets:
-        - name: appInsights-InstrumentationKey
