@@ -8,4 +8,4 @@ nodejs:
     "plumsi":
       secrets:
         - name: appInsights-InstrumentationKey
-#        - name: testDoesntExist
+        - name: testDoesntExist
