@@ -1,5 +1,4 @@
-ARG arch=linux/amd64
-FROM --platform=${arch} hmctspublic.azurecr.io/base/node:16-alpine as base
+FROM hmctspublic.azurecr.io/base/node:16-alpine as base
 
 COPY package.json yarn.lock ./
 RUN yarn install --production
