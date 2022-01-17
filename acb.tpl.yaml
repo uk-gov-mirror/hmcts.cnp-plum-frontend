@@ -5,37 +5,6 @@ steps:
     when: ["-"]
     keep: true
 
-  - id: base-amd64
-    build: >
-      -t {{.Run.Registry}}/plum/frontend/base-amd64
-      --cache-from {{.Run.Registry}}/plum/frontend/base:latest
-      --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
-      --platform linux/amd64
-      --target base
-      .
-    when:
-      - pull-base
-    keep: true
-
-  - id: runtime-amd64
-    build: >
-      -t {{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64
-      --cache-from {{.Run.Registry}}/plum/frontend/base:latest
-      --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
-      --platform linux/amd64
-      --target runtime
-      .
-    when:
-      - base-amd64
-    keep: true
-
-  - id: push-images-amd64
-    push:
-      - "{{.Run.Registry}}/plum/frontend/base-amd64:latest"
-      - "{{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64"
-    when:
-      - runtime-amd64
-
   - id: base-arm64
     build: >
       -t {{.Run.Registry}}/plum/frontend/base-arm64
@@ -66,16 +35,3 @@ steps:
       - "{{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64"
     when:
       - runtime-arm64
-
-  - id: manifest-create
-    cmd: docker manifest create {{.Run.Registry}}/{{CI_IMAGE_TAG}} {{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64 {{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64
-    when:
-      - push-images-amd64
-      - push-images-arm64
-    keep: true
-
-  - id: manifest-push
-    cmd: docker manifest push {{.Run.Registry}}/{{CI_IMAGE_TAG}}
-    when:
-      - manifest-create
-    keep: true
