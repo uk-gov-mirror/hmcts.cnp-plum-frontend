@@ -70,13 +70,12 @@ steps:
   - id: manifest-create
     cmd: docker manifest create {{.Run.Registry}}/{{CI_IMAGE_TAG}} {{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64 {{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64
     when:
-      - base-amd64
-      - base-arm64
+      - push-images-amd64
+      - push-images-arm64
     keep: true
 
   - id: manifest-push
     cmd: docker manifest push {{.Run.Registry}}/{{CI_IMAGE_TAG}}
     when:
-      - base-amd64
-      - base-arm64
+      - manifest-create
     keep: true
