@@ -29,7 +29,7 @@ steps:
       - base-amd64
     keep: true
 
-  - id: push-images-arm64
+  - id: push-images-amd64
     push:
       - "{{.Run.Registry}}/plum/frontend/base-amd64:latest"
       - "{{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64"
