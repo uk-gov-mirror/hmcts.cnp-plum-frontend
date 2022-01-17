@@ -11,7 +11,7 @@ steps:
       --cache-from {{.Run.Registry}}/plum/frontend/base:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
       --platform linux/amd64
-      --target base
+      --target base-amd64
       .
     when:
       - pull-base
@@ -23,7 +23,7 @@ steps:
       --cache-from {{.Run.Registry}}/plum/frontend/base:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
       --platform linux/amd64
-      --target runtime
+      --target runtime-amd64
       .
     when:
       - base-amd64
@@ -42,7 +42,7 @@ steps:
       --cache-from {{.Run.Registry}}/plum/frontend/base:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
       --platform linux/arm64
-      --target base
+      --target base-arm64
       .
     when:
       - pull-base
@@ -54,7 +54,7 @@ steps:
       --cache-from {{.Run.Registry}}/plum/frontend/base:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
       --platform linux/arm64
-      --target runtime
+      --target runtime-arm64
       .
     when:
       - base-arm64
