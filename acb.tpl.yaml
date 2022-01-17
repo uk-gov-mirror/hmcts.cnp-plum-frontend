@@ -45,7 +45,7 @@ steps:
       --target base
       .
     when:
-      - pull-base
+      - push-images-amd64
     keep: true
 
   - id: runtime-arm64
