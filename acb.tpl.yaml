@@ -10,7 +10,7 @@ steps:
       -t {{.Run.Registry}}/plum/frontend/base-amd64
       --cache-from {{.Run.Registry}}/plum/frontend/base-amd64:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
-      --platform linux/amd64
+      --platform Linux/amd64
       --target base
       .
     when:
@@ -22,7 +22,7 @@ steps:
       -t {{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64
       --cache-from {{.Run.Registry}}/plum/frontend/base-amd64:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
-      --platform linux/amd64
+      --platform Linux/amd64
       --target runtime
       .
     when:
@@ -46,7 +46,7 @@ steps:
       -t {{.Run.Registry}}/plum/frontend/base-arm64
       --cache-from {{.Run.Registry}}/plum/frontend/base-arm64:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
-      --platform linux/arm64
+      --platform Linux/arm64
       --target base
       .
     when:
@@ -58,7 +58,7 @@ steps:
       -t {{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64
       --cache-from {{.Run.Registry}}/plum/frontend/base-arm64:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
-      --platform linux/arm64
+      --platform Linux/arm64
       --target runtime
       .
     when:
@@ -80,7 +80,7 @@ steps:
     keep: true
 
   - id: manifest-push
-    cmd: docker manifest push {{.Run.Registry}}/{{CI_IMAGE_TAG}}
+    cmd: docker manifest push --purge {{.Run.Registry}}/{{CI_IMAGE_TAG}}
     when:
       - manifest-create
     keep: true
