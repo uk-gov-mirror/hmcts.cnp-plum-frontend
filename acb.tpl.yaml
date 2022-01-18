@@ -38,7 +38,7 @@ steps:
   - id: pull-base-image-arm64
     cmd: docker pull --platform linux/arm64 hmctspublic.azurecr.io/base/node:16-alpine
     when:
-      - push-images-amd64
+      - runtime-amd64
     keep: true
 
   - id: pull-base-arm64
