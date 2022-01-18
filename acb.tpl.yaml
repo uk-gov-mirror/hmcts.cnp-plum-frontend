@@ -38,7 +38,8 @@ steps:
 
   - id: pull-base-base-arm64
     cmd: docker pull {{.Run.Registry}}/plum/frontend/base-arm64:latest || true
-    when: ["-"]
+    when:
+      - push-images-amd64
     keep: true
 
   - id: base-arm64
