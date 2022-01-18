@@ -46,7 +46,7 @@ steps:
       -t {{.Run.Registry}}/plum/frontend/base-arm64
       --cache-from {{.Run.Registry}}/plum/frontend/base-arm64:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
-      --platform Linux/arm64
+      --platform Linux/arm64/v8
       --target base
       .
     when:
@@ -58,7 +58,7 @@ steps:
       -t {{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64
       --cache-from {{.Run.Registry}}/plum/frontend/base-arm64:latest
       --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
-      --platform Linux/arm64
+      --platform Linux/arm64/v8
       --target runtime
       .
     when:
