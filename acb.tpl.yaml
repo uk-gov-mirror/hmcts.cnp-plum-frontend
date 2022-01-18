@@ -1,6 +1,6 @@
 version: 1.0-preview-1
 steps:
-  - id: pull-base-base-amd64
+  - id: pull-base-amd64
     cmd: docker pull {{.Run.Registry}}/plum/frontend/base-amd64:latest || true
     when: ["-"]
     keep: true
@@ -14,7 +14,7 @@ steps:
       --target base
       .
     when:
-      - pull-base-base-amd64
+      - pull-base-amd64
     keep: true
 
   - id: runtime-amd64
@@ -36,7 +36,7 @@ steps:
     when:
       - runtime-amd64
 
-  - id: pull-base-base-arm64
+  - id: pull-base-arm64
     cmd: docker pull {{.Run.Registry}}/plum/frontend/base-arm64:latest || true
     when:
       - push-images-amd64
@@ -51,7 +51,7 @@ steps:
       --target base
       .
     when:
-      - pull-base-base-arm64
+      - pull-base-arm64
     keep: true
 
   - id: runtime-arm64
