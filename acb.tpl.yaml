@@ -1,8 +1,14 @@
 version: 1.0-preview-1
 steps:
+  - id: pull-base-image-amd64
+    cmd: docker pull --platform linux/amd64 hmctspublic.azurecr.io/base/node:16-alpine
+    when: ["-"]
+    keep: true
+
   - id: pull-base-amd64
     cmd: docker pull {{.Run.Registry}}/plum/frontend/base:amd64 || true
-    when: ["-"]
+    when:
+      - pull-base-image-amd64
     keep: true
 
   - id: base-amd64
@@ -29,16 +35,15 @@ steps:
       - base-amd64
     keep: true
 
-  - id: delete-node-base
-    cmd: docker image rm hmctspublic.azurecr.io/base/node:16-alpine || true
-    when:
-      - runtime-amd64
+  - id: pull-base-image-arm64
+    cmd: docker pull --platform linux/arm64 hmctspublic.azurecr.io/base/node:16-alpine
+    when: ["-"]
     keep: true
 
   - id: pull-base-arm64
     cmd: docker pull {{.Run.Registry}}/plum/frontend/base-arm64:latest || true
     when:
-      - delete-node-base
+      - pull-base-image-arm64
     keep: true
 
   - id: base-arm64
