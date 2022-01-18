@@ -1,7 +1,7 @@
 FROM hmctspublic.azurecr.io/base/node:16-alpine as base
 
-#COPY package.json yarn.lock ./
-RUN yarn install --production
+COPY package.json yarn.lock ./
+RUN yarn install --production --network-timeout 1000000
 
 FROM base as runtime
 COPY . .
