@@ -6,16 +6,16 @@ steps:
     keep: true
 
   - id: pull-base-amd64
-    cmd: docker pull {{.Run.Registry}}/plum/frontend/base:amd64 || true
+    cmd: docker pull hmctspublic.azurecr.io/plum/frontend/base:amd64 || true
     when:
       - pull-base-image-amd64
     keep: true
 
   - id: base-amd64
     build: >
-      -t {{.Run.Registry}}/plum/frontend/base:amd64
-      --cache-from {{.Run.Registry}}/plum/frontend/base:amd64
-      --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
+      -t hmctspublic.azurecr.io/plum/frontend/base:amd64
+      --cache-from hmctspublic.azurecr.io/plum/frontend/base:amd64
+      --build-arg REGISTRY_NAME=hmctspublic
       --build-arg PLATFORM=/linux/amd64
       --platform Linux/amd64
       --target base
@@ -26,9 +26,9 @@ steps:
 
   - id: runtime-amd64
     build: >
-      -t {{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64
-      --cache-from {{.Run.Registry}}/plum/frontend/base:amd64
-      --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
+      -t hmctspublic.azurecr.io/plum/frontend:test-amd64
+      --cache-from hmctspublic.azurecr.io/plum/frontend/base:amd64
+      --build-arg REGISTRY_NAME=hmctspublic
       --build-arg PLATFORM=/linux/amd64
       --platform Linux/amd64
       --target runtime
@@ -44,16 +44,16 @@ steps:
     keep: true
 
   - id: pull-base-arm64
-    cmd: docker pull {{.Run.Registry}}/plum/frontend/base-arm64:latest || true
+    cmd: docker pull hmctspublic.azurecr.io/plum/frontend/base-arm64:latest || true
     when:
       - pull-base-image-arm64
     keep: true
 
   - id: base-arm64
     build: >
-      -t {{.Run.Registry}}/plum/frontend/base:arm64
-      --cache-from {{.Run.Registry}}/plum/frontend/base:arm64
-      --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
+      -t hmctspublic.azurecr.io/plum/frontend/base:arm64
+      --cache-from hmctspublic.azurecr.io/plum/frontend/base:arm64
+      --build-arg REGISTRY_NAME=hmctspublic
       --build-arg PLATFORM=/linux/arm64
       --platform Linux/arm64/v8
       --target base
@@ -64,9 +64,9 @@ steps:
 
   - id: runtime-arm64
     build: >
-      -t {{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64
-      --cache-from {{.Run.Registry}}/plum/frontend/base:arm64
-      --build-arg REGISTRY_NAME={{REGISTRY_NAME}}
+      -t hmctspublic.azurecr.io/plum/frontend:test-arm64
+      --cache-from hmctspublic.azurecr.io/plum/frontend/base:arm64
+      --build-arg REGISTRY_NAME=hmctspublic
       --build-arg PLATFORM=/linux/arm64
       --platform Linux/arm64/v8
       --target runtime
@@ -77,22 +77,22 @@ steps:
 
   - id: push-images
     push:
-      - "{{.Run.Registry}}/plum/frontend/base:amd64"
-      - "{{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64"
-      - "{{.Run.Registry}}/plum/frontend/base:arm64"
-      - "{{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64"
+      - "hmctspublic.azurecr.io/plum/frontend/base:amd64"
+      - "hmctspublic.azurecr.io/plum/frontend:test-amd64"
+      - "hmctspublic.azurecr.io/plum/frontend/base:arm64"
+      - "hmctspublic.azurecr.io/plum/frontend:test-arm64"
     when:
       - runtime-amd64
       - runtime-arm64
 
   - id: manifest-create
-    cmd: docker manifest create {{.Run.Registry}}/{{CI_IMAGE_TAG}} {{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64 {{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64
+    cmd: docker manifest create hmctspublic.azurecr.io/plum/frontend:test hmctspublic.azurecr.io/plum/frontend/base:amd64 hmctspublic.azurecr.io/plum/frontend:test-arm64
     when:
       - push-images
     keep: true
 
   - id: manifest-push
-    cmd: docker manifest push --purge {{.Run.Registry}}/{{CI_IMAGE_TAG}}
+    cmd: docker manifest push --purge hmctspublic.azurecr.io/plum/frontend:test
     when:
       - manifest-create
     keep: true
