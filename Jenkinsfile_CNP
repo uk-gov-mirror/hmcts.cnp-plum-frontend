@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure")
+@Library("Infrastructure@test-with-01-cluster")
 
 def product = "plum"
 def component = "frontend"
