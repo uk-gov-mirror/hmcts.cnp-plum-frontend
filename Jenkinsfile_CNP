@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure")
+@Library("Infrastructure@dtspo-10974-yarnv3-nagger")
 
 def product = "plum"
 def component = "frontend"
