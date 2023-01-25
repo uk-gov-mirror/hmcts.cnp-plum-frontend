@@ -9,7 +9,7 @@
     "start": "cross-env NODE_PATH=. node server.js",
     "setup": "cross-env NODE_PATH=. node --version",
     "lint": "cross-env NODE_PATH=. eslint --ignore-pattern coverage .",
-    "test": "yarn lint && yarn test:unit && yarn test:acceptance",
+    "test": "yarn lint && yarn test:unit",
     "test:unit": "cross-env NODE_ENV=test NODE_PATH=. mocha './test/unit/**/*.test.js' --reporter spec --recursive",
     "test:coverage": "cross-env NODE_ENV=test NODE_PATH=. nyc --cache false --reporter=lcov --reporter=text-lcov mocha './test/unit/*.test.js' './test/acceptance/**/*.test.js'",  
     "test:nsp": "cross-env NODE_PATH=. nsp check",
