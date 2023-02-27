@@ -13,7 +13,8 @@
 
 properties([
   parameters([
-    string(name: 'LIB_VERSION', defaultValue: 'master', description: 'Branch name of pipeline library to use')
+    string(name: 'LIB_VERSION', defaultValue: 'master', description: 'Branch name of pipeline library to use'),
+    string(name: 'SLACK_CHANNEL', defaultValue: '#test-ek-2', description: 'Slack channel to notify')
   ])
 ])
 
@@ -29,4 +30,5 @@ withPipeline(type, product, app) {
   // never skip stages when testing the pipeline
   env.NO_SKIP_IMG_BUILD = 'true'
   disableLegacyDeployment()
+  enableSlackNotifications(params.SLACK_CHANNEL)
 }
