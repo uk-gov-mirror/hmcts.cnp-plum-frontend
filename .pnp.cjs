@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["applicationinsights", "virtual:e087534260550bdfc1620d15599a3351bea65c44bd1baaa39629fd745daa9e23cfefd407097044244788669d253f77d8075209ee5db456b4d92f42a72f2b41ff#npm:2.5.0"],\
             ["chai", "npm:4.3.7"],\
             ["chai-http", "npm:4.3.0"],\
-            ["config", "npm:3.3.8"],\
+            ["config", "npm:3.3.9"],\
             ["cross-env", "npm:7.0.3"],\
             ["eslint", "npm:8.36.0"],\
             ["eslint-plugin-mocha", "virtual:e087534260550bdfc1620d15599a3351bea65c44bd1baaa39629fd745daa9e23cfefd407097044244788669d253f77d8075209ee5db456b4d92f42a72f2b41ff#npm:10.1.0"],\
@@ -1757,10 +1757,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["config", [\
-        ["npm:3.3.8", {\
-          "packageLocation": "./.yarn/cache/config-npm-3.3.8-46e6756218-8ae3b1a073.zip/node_modules/config/",\
+        ["npm:3.3.9", {\
+          "packageLocation": "./.yarn/cache/config-npm-3.3.9-7e0be6fe2e-2c29e40be2.zip/node_modules/config/",\
           "packageDependencies": [\
-            ["config", "npm:3.3.8"],\
+            ["config", "npm:3.3.9"],\
             ["json5", "npm:2.2.3"]\
           ],\
           "linkType": "HARD"\
@@ -3105,7 +3105,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["applicationinsights", "virtual:e087534260550bdfc1620d15599a3351bea65c44bd1baaa39629fd745daa9e23cfefd407097044244788669d253f77d8075209ee5db456b4d92f42a72f2b41ff#npm:2.5.0"],\
             ["chai", "npm:4.3.7"],\
             ["chai-http", "npm:4.3.0"],\
-            ["config", "npm:3.3.8"],\
+            ["config", "npm:3.3.9"],\
             ["cross-env", "npm:7.0.3"],\
             ["eslint", "npm:8.36.0"],\
             ["eslint-plugin-mocha", "virtual:e087534260550bdfc1620d15599a3351bea65c44bd1baaa39629fd745daa9e23cfefd407097044244788669d253f77d8075209ee5db456b4d92f42a72f2b41ff#npm:10.1.0"],\
