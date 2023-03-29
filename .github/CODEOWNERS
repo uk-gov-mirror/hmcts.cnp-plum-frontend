@@ -1,3 +1,9 @@
 # https://help.github.com/en/articles/about-code-owners
 
 * @hmcts/platform-operations
+
+# Renovate
+.pnp.cjs
+.yarn/**
+package.json
+yarn.lock
