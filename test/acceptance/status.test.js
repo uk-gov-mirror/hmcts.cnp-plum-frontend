@@ -2,7 +2,7 @@ require('should');
 require('should-http');
 
 const request = require('supertest');
-const { server } = require('../../../server');
+const { server } = require('../../server');
 
 describe('Testing readiness', () => {
   it('should respond 200 OK ', function (done) {
