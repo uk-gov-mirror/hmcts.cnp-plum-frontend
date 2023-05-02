@@ -2,8 +2,11 @@
 
 @Library("Infrastructure")
 
-def product = "plum"
-def component = "frontend"
+def type = "nodejs"
+def product = "rpe"
+def component = "expressjs-template"
+//def product = "plum"
+//def component = "frontend"
 def expiresAfter = "3000-01-01"
 
 def secrets = [ 'plumsi-${env}':
@@ -21,8 +24,16 @@ static LinkedHashMap<String, Object> secret(String secretName, String envVar) {
   ]
 }
 
-withPipeline("nodejs", product, component) {
+def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
+
+withPipeline(type, product, component) {
   loadVaultSecrets(secrets)
   disableLegacyDeployment()
   expires(expiresAfter)
+
+  afterAlways('build') {
+    yarnBuilder.yarn('rebuild puppeteer')
+    yarnBuilder.yarn('build')
+  }
+
 }
