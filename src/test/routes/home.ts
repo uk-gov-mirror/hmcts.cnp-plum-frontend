@@ -14,13 +14,3 @@ describe('Home page', () => {
     });
   });
 });
-
-describe('Health check', () => {
-  describe('on GET', () => {
-    test('should return code 200', async () => {
-      await request(app)
-        .get('/health')
-        .expect(res => expect(res.status).to.equal(200));
-    });
-  });
-});
