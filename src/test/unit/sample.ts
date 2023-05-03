@@ -1,3 +1,4 @@
+import { HTTPError } from '../../main/HttpError';
 import { app } from '../../main/app';
 
 import { expect } from 'chai';
@@ -36,6 +37,18 @@ describe('Non-existent page', () => {
       await request(app)
         .get('/doesnoteist')
         .expect(res => expect(res.status).to.equal(404));
+    });
+  });
+});
+
+describe('HttpError', () => {
+  describe('when constructed', () => {
+    const e = new HTTPError('my error message', 400);
+    test('should contain the error message', async () => {
+      expect(e.message).to.equal('my error message');
+    });
+    test('should contain the error code', async () => {
+      expect(e.status).to.equal(400);
     });
   });
 });
