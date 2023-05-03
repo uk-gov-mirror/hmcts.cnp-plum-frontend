@@ -24,4 +24,3 @@ describe('Health check', () => {
     });
   });
 });
-
