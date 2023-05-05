@@ -23,6 +23,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@codeceptjs/allure-legacy": "^1.0.2",
     "@hmcts/info-provider": "^1.0.0",
     "@hmcts/nodejs-healthcheck": "^1.7.3",
     "@hmcts/nodejs-logging": "^4.0.4",

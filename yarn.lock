@@ -1718,6 +1718,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@codeceptjs/allure-legacy@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@codeceptjs/allure-legacy@npm:1.0.2"
+  dependencies:
+    allure-js-commons: ^1.3.2
+  checksum: e53d684041db40a8ed5a320a88838ff1bee117ae9020625f850cead1c0201877bd9cc295adcaa3760074aa7ab238d5661e7409397098f971a5cb4c9d72d52400
+  languageName: node
+  linkType: hard
+
 "@codeceptjs/configure@npm:^0.10.0":
   version: 0.10.0
   resolution: "@codeceptjs/configure@npm:0.10.0"
@@ -3660,6 +3669,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"allure-js-commons@npm:^1.3.2":
+  version: 1.3.2
+  resolution: "allure-js-commons@npm:1.3.2"
+  dependencies:
+    file-type: ^7.7.1
+    fs-extra: ^6.0.1
+    js2xmlparser: ^3.0.0
+    mime: ^2.3.1
+    object-assign: ^4.1.1
+    uuid: ^3.0.0
+  checksum: 9e7433579e061dc4fa0e0b826f22457c96554a76453b663c0378005c312dbce43d592a7d64b79384ccb45fd21d3ff32fa4069be37651b7dc89da4e8d6499e5d0
+  languageName: node
+  linkType: hard
+
 "ansi-colors@npm:4.1.1":
   version: 4.1.1
   resolution: "ansi-colors@npm:4.1.1"
@@ -4790,6 +4813,7 @@ __metadata:
     "@babel/core": ^7.19.0
     "@babel/eslint-parser": ^7.18.9
     "@babel/preset-env": ^7.19.0
+    "@codeceptjs/allure-legacy": ^1.0.2
     "@codeceptjs/configure": ^0.10.0
     "@hmcts/info-provider": ^1.0.0
     "@hmcts/nodejs-healthcheck": ^1.7.3
@@ -6578,6 +6602,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"file-type@npm:^7.7.1":
+  version: 7.7.1
+  resolution: "file-type@npm:7.7.1"
+  checksum: 1c4f8cb2bd1f8ccde330da3b5ccd56e9cbd701245c147433d74778cc3286abaabf3d0fcd19b9f821caccbd11af825ec9b780cfbd2ad61e644ffcba1f59b1426d
+  languageName: node
+  linkType: hard
+
 "fill-range@npm:^7.0.1":
   version: 7.0.1
   resolution: "fill-range@npm:7.0.1"
@@ -6767,6 +6798,17 @@ __metadata:
     jsonfile: ^4.0.0
     universalify: ^0.1.0
   checksum: c5ae3c7043ad7187128e619c0371da01b58694c1ffa02c36fb3f5b459925d9c27c3cb1e095d9df0a34a85ca993d8b8ff6f6ecef868fd5ebb243548afa7fc0936
+  languageName: node
+  linkType: hard
+
+"fs-extra@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "fs-extra@npm:6.0.1"
+  dependencies:
+    graceful-fs: ^4.1.2
+    jsonfile: ^4.0.0
+    universalify: ^0.1.0
+  checksum: 133dbd765e05c1cdaaf723308e00ffbe746da5ad516ad890ae2da2a538982c1175371055c778fbe68d1fca1da9ed4003ba55c4a14e070372eabf6a7c48062759
   languageName: node
   linkType: hard
 
@@ -8654,6 +8696,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js2xmlparser@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "js2xmlparser@npm:3.0.0"
+  dependencies:
+    xmlcreate: ^1.0.1
+  checksum: 4e0ff6b6951192cb3bc2d06425b14785f9efc3b5e36c36cc7c67640004eaa07b508c0dd4d3e26bebe59dac7bd04dfe2774ca8b1a1ab00ef187d554794f0ae9c3
+  languageName: node
+  linkType: hard
+
 "jsbn@npm:~0.1.0":
   version: 0.1.1
   resolution: "jsbn@npm:0.1.1"
@@ -9241,7 +9292,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime@npm:2.6.0":
+"mime@npm:2.6.0, mime@npm:^2.3.1":
   version: 2.6.0
   resolution: "mime@npm:2.6.0"
   bin:
@@ -9851,6 +9902,13 @@ __metadata:
   version: 0.9.0
   resolution: "oauth-sign@npm:0.9.0"
   checksum: 8f5497a127967866a3c67094c21efd295e46013a94e6e828573c62220e9af568cc1d2d04b16865ba583e430510fa168baf821ea78f355146d8ed7e350fc44c64
+  languageName: node
+  linkType: hard
+
+"object-assign@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "object-assign@npm:4.1.1"
+  checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
   languageName: node
   linkType: hard
 
@@ -12805,7 +12863,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^3.3.2":
+"uuid@npm:^3.0.0, uuid@npm:^3.3.2":
   version: 3.4.0
   resolution: "uuid@npm:3.4.0"
   bin:
@@ -13191,6 +13249,13 @@ __metadata:
   version: 15.0.0
   resolution: "xmlbuilder@npm:15.0.0"
   checksum: b1917a90c37d5a6b17db72cb5d5c443448c67615280b8cb40eeee34efed62f897dab523bf69cb6568163fe9f4f299c177b36e98241c87dbde1b968a549edfff4
+  languageName: node
+  linkType: hard
+
+"xmlcreate@npm:^1.0.1":
+  version: 1.0.2
+  resolution: "xmlcreate@npm:1.0.2"
+  checksum: 2fbe0303fa8d1e9e401e9137a6e6b32f037151bc25a5a413cf97c7cb197b47d21adb518eb3f9ee59f248851144491deb04d22a962acfeff700dafad109e9ecce
   languageName: node
   linkType: hard
 
