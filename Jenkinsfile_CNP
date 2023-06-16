@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure")
+@Library("Infrastructure@Fix-audit-suppressions-to-capture-everything") _
 
 def type = "nodejs"
 def product = "plum"
