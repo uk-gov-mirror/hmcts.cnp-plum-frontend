@@ -71,7 +71,7 @@
     "@babel/preset-env": "^7.19.0",
     "@codeceptjs/configure": "^0.10.0",
     "@types/chai-as-promised": "^7.1.5",
-    "@types/jest": "^29.4.0",
+    "@types/jest": "^29.5.2",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
@@ -79,6 +79,7 @@
     "babel-loader": "^9.0.0",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
+    "chokidar": "^3.5.3",
     "codeceptjs": "^3.3.6",
     "copy-webpack-plugin": "9.1.0",
     "css-loader": "^6.7.1",
@@ -113,6 +114,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "resolutions": {
+    "semver": "^7.5.3",
     "qs": "^6.9.7",
     "json5": "^2.0.0",
     "http-cache-semantics": "^4.1.1",
