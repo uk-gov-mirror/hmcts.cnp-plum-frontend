@@ -28,7 +28,6 @@ withPipeline(type, product, component) {
   loadVaultSecrets(secrets)
   disableLegacyDeployment()
   expires(expiresAfter)
-  enableCleanupOfHelmReleaseAlways()
 
 
   afterAlways('build') {
