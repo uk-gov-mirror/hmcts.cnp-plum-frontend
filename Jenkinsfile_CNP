@@ -1,6 +1,6 @@
 #!groovy 
 
-@Library("Infrastructure@DTSPO-13917-NAGGER-HELM-WARNING") 
+@Library("Infrastructure@DTSPO-13917-NAGGER-HELM-WARNING")
 
 def type = "nodejs"
 def product = "plum"
