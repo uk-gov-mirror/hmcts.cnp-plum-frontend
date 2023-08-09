@@ -3855,7 +3855,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"applicationinsights@npm:^2.3.4":
+"applicationinsights@npm:^2.3.6":
   version: 2.7.0
   resolution: "applicationinsights@npm:2.7.0"
   dependencies:
@@ -4902,7 +4902,7 @@ __metadata:
     "@types/supertest": ^2.0.12
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.0.0
-    applicationinsights: ^2.3.4
+    applicationinsights: ^2.3.6
     axios: ^1.0.0
     axios-debug-log: ^1.0.0
     babel-loader: ^9.0.0
