@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure@dxw/daily-vm-template")
+@Library("Infrastructure")
 
 def type = "nodejs"
 def product = "plum"
