@@ -114,6 +114,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "resolutions": {
+    "@opentelemetry/instrumentation": "0.41.2",
     "semver": "^7.5.3",
     "qs": "^6.9.7",
     "json5": "^2.0.0",
@@ -124,5 +125,5 @@
     "*.{js,ts}": "eslint --cache --fix",
     "*.{js,ts,css,md,html,json}": "prettier --write"
   },
-  "packageManager": "yarn@3.6.0"
+  "packageManager": "yarn@3.6.1"
 }
