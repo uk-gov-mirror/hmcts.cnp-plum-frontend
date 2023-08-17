@@ -11,8 +11,7 @@ def type = "nodejs"
 def product = "plum"
 def component = "frontend"
 
-def TEST_URL = "https://plum.aat.platform.hmcts.net"
-
 withNightlyPipeline(type, product, component) {
+    env.TEST_URL = "https://plum.aat.platform.hmcts.net"
     enableSecurityScan()
 }
