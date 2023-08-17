@@ -5,12 +5,12 @@ properties([
 pipelineTriggers([cron('H 07 * * 1-5')])
 ])
 
-@Library("Infrastructure")
+@Library("Infrastructure@DTSPO-14034/zap-cli-replace")
 
 def type = "nodejs"
 def product = "plum"
 def component = "frontend"
 
 withNightlyPipeline(type, product, component) {
-
+    enableSecurityScan()
 }
