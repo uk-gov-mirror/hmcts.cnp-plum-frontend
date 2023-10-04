@@ -5,7 +5,7 @@ properties([
 pipelineTriggers([cron('H 07 * * 1-5')])
 ])
 
-@Library("Infrastructure@nodeSelector-logic")
+@Library("Infrastructure@url-exclusions")
 
 def type = "nodejs"
 def product = "plum"
@@ -13,4 +13,5 @@ def component = "frontend"
 
 withNightlyPipeline(type, product, component) {
     env.TEST_URL = "https://plum.aat.platform.hmcts.net"
+    enableSecurityScan()
 }
