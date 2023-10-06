@@ -3,6 +3,10 @@
 properties([
 // H allow predefined but random minute see https://en.wikipedia.org/wiki/Cron#Non-standard_characters
 pipelineTriggers([cron('H 07 * * 1-5')])
+
+parameters([
+  string(name: 'SecurityRules', defaultValue: 'http://raw.githubusercontent.com/hmcts/security-test-rules/master/conf/security-rules.conf'),
+  ])
 ])
 
 @Library("Infrastructure@url-exclusions")
@@ -14,4 +18,5 @@ def component = "frontend"
 withNightlyPipeline(type, product, component) {
     env.TEST_URL = "https://plum.aat.platform.hmcts.net"
     enableSecurityScan()
+    env.Rules = params.SecurityRules
 }
