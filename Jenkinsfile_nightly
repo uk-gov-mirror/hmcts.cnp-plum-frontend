@@ -8,7 +8,7 @@ parameters([
   ])
 ])
 
-@Library("Infrastructure@url-exclusions")
+@Library("Infrastructure@DTSPO-15437/gradle-frontend")
 
 def type = "nodejs"
 def product = "plum"
