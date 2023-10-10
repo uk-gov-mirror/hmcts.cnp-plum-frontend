@@ -13,10 +13,9 @@ parameters([
 def type = "nodejs"
 def product = "plum"
 def component = "frontend"
-def isFrontend = true
 
 withNightlyPipeline(type, product, component) {
     env.TEST_URL = "https://plum.aat.platform.hmcts.net"
-    enableSecurityScan(isFrontend)
+    enableSecurityScan()
     env.Rules = params.SecurityRules
 }
