@@ -3992,7 +3992,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"applicationinsights@npm:^2.3.4":
+"applicationinsights@npm:^2.7.3":
   version: 2.9.0
   resolution: "applicationinsights@npm:2.9.0"
   dependencies:
