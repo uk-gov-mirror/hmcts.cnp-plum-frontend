@@ -2,4 +2,4 @@ nodejs:
   image: ${IMAGE_NAME}
   ingressHost: ${SERVICE_FQDN}
   ingressAnnotations:
-      external-dns.alpha.kubernetes.io/exclude: "true"
+    external-dns.alpha.kubernetes.io/exclude: 'true'
