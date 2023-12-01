@@ -2,14 +2,16 @@ version: 1.0-preview-1
 steps:
   - id: pull-base-image-amd64
     cmd: docker pull --platform linux/amd64 hmctspublic.azurecr.io/base/node:18-alpine && docker tag hmctspublic.azurecr.io/base/node:18-alpine hmctspublic.azurecr.io/base/node/linux/amd64:18-alpine
+    retries: 10
+    retryDelay: 5
     when: ['-']
-    keep: true
 
   - id: pull-base-amd64
     cmd: docker pull {{.Run.Registry}}/plum/frontend/base:amd64 || true
+    retries: 10
+    retryDelay: 5
     when:
       - pull-base-image-amd64
-    keep: true
 
   - id: base-amd64
     build: >
@@ -20,9 +22,10 @@ steps:
       --platform Linux/amd64
       --target base
       .
+    retries: 10
+    retryDelay: 5
     when:
       - pull-base-amd64
-    keep: true
 
   - id: runtime-amd64
     build: >
@@ -33,21 +36,24 @@ steps:
       --platform Linux/amd64
       --target runtime
       .
+    retries: 10
+    retryDelay: 5
     when:
       - base-amd64
-    keep: true
 
   - id: pull-base-image-arm64
     cmd: docker pull --platform linux/arm64 hmctspublic.azurecr.io/base/node:18-alpine && docker tag hmctspublic.azurecr.io/base/node:18-alpine hmctspublic.azurecr.io/base/node/linux/arm64:18-alpine
+    retries: 10
+    retryDelay: 5
     when:
       - pull-base-image-amd64
-    keep: true
 
   - id: pull-base-arm64
     cmd: docker pull {{.Run.Registry}}/plum/frontend/base-arm64:latest || true
+    retries: 10
+    retryDelay: 5
     when:
       - pull-base-image-arm64
-    keep: true
 
   - id: base-arm64
     build: >
@@ -58,9 +64,10 @@ steps:
       --platform Linux/arm64/v8
       --target base
       .
+    retries: 10
+    retryDelay: 5
     when:
       - pull-base-arm64
-    keep: true
 
   - id: runtime-arm64
     build: >
@@ -71,9 +78,10 @@ steps:
       --platform Linux/arm64/v8
       --target runtime
       .
+    retries: 10
+    retryDelay: 5
     when:
       - base-arm64
-    keep: true
 
   - id: push-images
     push:
@@ -81,18 +89,22 @@ steps:
       - '{{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64'
       - '{{.Run.Registry}}/plum/frontend/base:arm64'
       - '{{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64'
+    retries: 10
+    retryDelay: 5
     when:
       - runtime-amd64
       - runtime-arm64
 
   - id: manifest-create
     cmd: docker manifest create {{.Run.Registry}}/{{CI_IMAGE_TAG}} {{.Run.Registry}}/{{CI_IMAGE_TAG}}-amd64 {{.Run.Registry}}/{{CI_IMAGE_TAG}}-arm64
+    retries: 10
+    retryDelay: 5
     when:
       - push-images
-    keep: true
 
   - id: manifest-push
     cmd: docker manifest push --purge {{.Run.Registry}}/{{CI_IMAGE_TAG}}
+    retries: 10
+    retryDelay: 5
     when:
       - manifest-create
-    keep: true
