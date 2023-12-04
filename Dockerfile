@@ -1,6 +1,7 @@
 # ---- Base image ----
 ARG PLATFORM=""
 FROM hmctspublic.azurecr.io/base/node${PLATFORM}:18-alpine as base
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
 USER root
 RUN corepack enable
