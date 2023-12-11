@@ -12,11 +12,9 @@ import { Helmet } from './modules/helmet';
 import { Nunjucks } from './modules/nunjucks';
 import { PropertiesVolume } from './modules/properties-volume';
 
-
 const { Logger } = require('@hmcts/nodejs-logging');
 
 const { setupDev } = require('./development');
-
 
 const env = process.env.NODE_ENV || 'development';
 const developmentMode = env === 'development';
