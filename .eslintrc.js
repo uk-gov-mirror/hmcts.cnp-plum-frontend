@@ -20,6 +20,7 @@ module.exports = {
     project: './tsconfig.eslint.json',
   },
   globals: { Atomics: 'readonly', SharedArrayBuffer: 'readonly' },
+  settings: {'import/external-module-folders': ['.yarn', 'node_modules', 'node_modules/@types']},
   rules: {
     '@typescript-eslint/array-type': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'error',
