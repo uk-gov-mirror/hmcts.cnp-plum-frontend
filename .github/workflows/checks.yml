@@ -11,9 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    env:
-      YARN_GLOBAL_FOLDER: /opt/.yarn
-      YARN_ENABLE_GLOBAL_CACHE: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
