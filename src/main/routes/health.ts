@@ -1,7 +1,6 @@
 import { Application } from 'express';
-import healthcheck from '@hmcts/nodejs-healthcheck';
 import axios from 'axios';
-
+const healthcheck = require('@hmcts/nodejs-healthcheck');
 export default function (app: Application): void {
   const backendHealthCheckUrl = 'http://plum-recipe-backend-sandbox.service.core-compute-sandbox.internal/health/readiness';
 
