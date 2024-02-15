@@ -15,7 +15,7 @@ export default function (app: Application): void {
       return res.render('home', { recipes });
     } catch (err) {
       logger.error(err.stack);
-      res.status(500).end();;
+      res.status(500).end();
     }
   });
 }
