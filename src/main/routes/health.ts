@@ -5,9 +5,9 @@ import { Application } from 'express';
 const recipesUrl = config.get('backendUrl');
 
 export default function (app: Application): void {
-  app.get('/health/readiness', async (req, res) => {
+  app.get('/health/liveness', async (req, res) => {
     try {
-      const response = await axios.get(`${recipesUrl}/health/liveness`);
+      const response = await axios.get(`${recipesUrl}/health/readiness`);
       if (response.status === 200) {
         res.status(200).json({ status: 'Backend.UP' });
       } else {
