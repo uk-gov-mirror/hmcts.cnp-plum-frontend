@@ -12,26 +12,11 @@ export default function (app: Application): void {
       backendCheck: healthcheck.raw(async () => {
         try {
           const response = await axios.get(`${recipesUrl}/health/readiness`);
-          return response.status === 200 ? healthcheck.up() : healthcheck.down();
+          return response.status === 200 ? backend.up() : backend.down();
         } catch (error) {
-          return healthcheck.down();
+          return backend.down();
         }
       }),
     },
   };
-
-  healthcheck.addTo(app, healthCheckConfig);
-
-  app.get('/healthz', async (req, res) => {
-    try {
-      const response = await axios.get(`${recipesUrl}/health/readiness`);
-      if (response.status === 200) {
-        res.status(200).send('OK');
-      } else {
-        res.status(503).send('Backend is Unavailable');
-      }
-    } catch (error) {
-      res.status(503).send('Backend is Unavailable');
-    }
-  });
 }
