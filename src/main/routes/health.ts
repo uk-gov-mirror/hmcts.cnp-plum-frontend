@@ -1,8 +1,6 @@
-import { Application } from 'express';
-
 import config from 'config';
-
 import axios from 'axios';
+import { Application } from 'express';
 
 const healthcheck = require('@hmcts/nodejs-healthcheck');
 
