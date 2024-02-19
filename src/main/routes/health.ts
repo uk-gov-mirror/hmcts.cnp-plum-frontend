@@ -10,9 +10,13 @@ export default function (app: Application): void {
       backendCheck: healthcheck.raw(async () => {
         try {
           const response = await axios.get(`${recipesUrl}/health/readiness`);
-          return response.status === 200 ? healthcheck.up() : healthcheck.down();
+          if (response.status === 200) {
+            return healthcheck.up({ message: 'Backend is UP' });
+          } else {
+            return healthcheck.down({ message: 'Backend is DOWN' });
+          }
         } catch (error) {
-          return healthcheck.down({ statusCode: 500 });
+          return healthcheck.down({ statusCode: 500, message: 'Backend is DOWN' });
         }
       }),
     },
