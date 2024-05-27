@@ -87,7 +87,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-html-reporter", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:3.10.2"],\
             ["jquery", "npm:3.7.1"],\
             ["js-yaml", "npm:4.1.0"],\
-            ["lint-staged", "npm:15.2.4"],\
+            ["lint-staged", "npm:15.2.5"],\
             ["lodash", "npm:4.17.21"],\
             ["mini-css-extract-plugin", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:2.9.0"],\
             ["nock", "npm:13.5.4"],\
@@ -8284,7 +8284,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-html-reporter", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:3.10.2"],\
             ["jquery", "npm:3.7.1"],\
             ["js-yaml", "npm:4.1.0"],\
-            ["lint-staged", "npm:15.2.4"],\
+            ["lint-staged", "npm:15.2.5"],\
             ["lodash", "npm:4.17.21"],\
             ["mini-css-extract-plugin", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:2.9.0"],\
             ["nock", "npm:13.5.4"],\
@@ -13193,17 +13193,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["lint-staged", [\
-        ["npm:15.2.4", {\
-          "packageLocation": "./.yarn/cache/lint-staged-npm-15.2.4-22a32760f9-521a5cd3c5.zip/node_modules/lint-staged/",\
+        ["npm:15.2.5", {\
+          "packageLocation": "./.yarn/cache/lint-staged-npm-15.2.5-078d73644c-3025868d96.zip/node_modules/lint-staged/",\
           "packageDependencies": [\
-            ["lint-staged", "npm:15.2.4"],\
+            ["lint-staged", "npm:15.2.5"],\
             ["chalk", "npm:5.3.0"],\
             ["commander", "npm:12.1.0"],\
             ["debug", "virtual:e778dc10f79fdbbb66a331d5f573103061cb300ceef13038bb3c391f5294dce7b8f4cef344ac47ca986af1724a8068d2f4361769a6416b99ee691025d82bd0fb#npm:4.3.4"],\
             ["execa", "npm:8.0.1"],\
             ["lilconfig", "npm:3.1.1"],\
             ["listr2", "npm:8.2.1"],\
-            ["micromatch", "npm:4.0.6"],\
+            ["micromatch", "npm:4.0.7"],\
             ["pidtree", "npm:0.6.0"],\
             ["string-argv", "npm:0.3.2"],\
             ["yaml", "npm:2.4.2"]\
@@ -13618,12 +13618,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:4.0.6", {\
-          "packageLocation": "./.yarn/cache/micromatch-npm-4.0.6-bb64570f0c-cd44a850c6.zip/node_modules/micromatch/",\
+        ["npm:4.0.7", {\
+          "packageLocation": "./.yarn/cache/micromatch-npm-4.0.7-28fb7387ee-3cde047d70.zip/node_modules/micromatch/",\
           "packageDependencies": [\
-            ["micromatch", "npm:4.0.6"],\
+            ["micromatch", "npm:4.0.7"],\
             ["braces", "npm:3.0.3"],\
-            ["picomatch", "npm:4.0.2"]\
+            ["picomatch", "npm:2.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14830,13 +14830,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/picomatch-npm-2.3.1-c782cfd986-050c865ce8.zip/node_modules/picomatch/",\
           "packageDependencies": [\
             ["picomatch", "npm:2.3.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:4.0.2", {\
-          "packageLocation": "./.yarn/cache/picomatch-npm-4.0.2-e93516ddf2-a7a5188c95.zip/node_modules/picomatch/",\
-          "packageDependencies": [\
-            ["picomatch", "npm:4.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
