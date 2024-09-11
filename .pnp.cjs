@@ -10770,7 +10770,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["methods", "npm:1.1.2"],\
             ["on-finished", "npm:2.4.1"],\
             ["parseurl", "npm:1.3.3"],\
-            ["path-to-regexp", "npm:0.1.7"],\
+            ["path-to-regexp", "npm:0.1.10"],\
             ["proxy-addr", "npm:2.0.7"],\
             ["qs", "npm:6.13.0"],\
             ["range-parser", "npm:1.2.1"],\
@@ -14820,7 +14820,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@sinonjs/fake-timers", "npm:11.2.2"],\
             ["@sinonjs/text-encoding", "npm:0.7.2"],\
             ["just-extend", "npm:6.2.0"],\
-            ["path-to-regexp", "npm:6.2.1"]\
+            ["path-to-regexp", "npm:0.1.10"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15522,17 +15522,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["path-to-regexp", [\
-        ["npm:0.1.7", {\
-          "packageLocation": "./.yarn/cache/path-to-regexp-npm-0.1.7-2605347373-69a14ea24d.zip/node_modules/path-to-regexp/",\
+        ["npm:0.1.10", {\
+          "packageLocation": "./.yarn/cache/path-to-regexp-npm-0.1.10-63516149e0-ab7a3b7a0b.zip/node_modules/path-to-regexp/",\
           "packageDependencies": [\
-            ["path-to-regexp", "npm:0.1.7"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:6.2.1", {\
-          "packageLocation": "./.yarn/cache/path-to-regexp-npm-6.2.1-8ebfe03654-f0227af828.zip/node_modules/path-to-regexp/",\
-          "packageDependencies": [\
-            ["path-to-regexp", "npm:6.2.1"]\
+            ["path-to-regexp", "npm:0.1.10"]\
           ],\
           "linkType": "HARD"\
         }]\
