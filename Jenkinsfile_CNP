@@ -34,4 +34,11 @@ withPipeline(type, product, component) {
     yarnBuilder.yarn('build')
   }
 
+  before('functionalTest') {
+    sh """
+       yarn install
+       yarn playwright install
+    """
+  }
+
 }

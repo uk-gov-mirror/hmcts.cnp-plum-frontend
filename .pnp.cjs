@@ -48,7 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/helmet", "npm:4.0.0"],\
             ["@types/jest", "npm:29.5.12"],\
             ["@types/lodash", "npm:4.17.7"],\
-            ["@types/node", "npm:20.14.8"],\
+            ["@types/node", "npm:20.16.9"],\
             ["@types/nunjucks", "npm:3.2.6"],\
             ["@types/require-directory", "npm:2.1.6"],\
             ["@types/serve-favicon", "npm:2.5.7"],\
@@ -6179,11 +6179,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/node", [\
-        ["npm:20.14.8", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-20.14.8-e4f4af022f-a912884000.zip/node_modules/@types/node/",\
+        ["npm:20.16.9", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-20.16.9-3ebb55959b-2f0a248cc0.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:20.14.8"],\
-            ["undici-types", "npm:5.26.5"]\
+            ["@types/node", "npm:20.16.9"],\
+            ["undici-types", "npm:6.19.6"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -8657,7 +8657,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/helmet", "npm:4.0.0"],\
             ["@types/jest", "npm:29.5.12"],\
             ["@types/lodash", "npm:4.17.7"],\
-            ["@types/node", "npm:20.14.8"],\
+            ["@types/node", "npm:20.16.9"],\
             ["@types/nunjucks", "npm:3.2.6"],\
             ["@types/require-directory", "npm:2.1.6"],\
             ["@types/serve-favicon", "npm:2.5.7"],\
@@ -18375,7 +18375,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.11"],\
             ["@tsconfig/node14", "npm:1.0.3"],\
             ["@tsconfig/node16", "npm:1.0.4"],\
-            ["@types/node", "npm:20.14.8"],\
+            ["@types/node", "npm:20.16.9"],\
             ["@types/swc__core", null],\
             ["@types/swc__wasm", null],\
             ["@types/typescript", null],\
@@ -18680,13 +18680,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["undici-types", [\
-        ["npm:5.26.5", {\
-          "packageLocation": "./.yarn/cache/undici-types-npm-5.26.5-de4f7c7bb9-3192ef6f3f.zip/node_modules/undici-types/",\
-          "packageDependencies": [\
-            ["undici-types", "npm:5.26.5"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:6.19.6", {\
           "packageLocation": "./.yarn/cache/undici-types-npm-6.19.6-9d9ccfb00d-e66df2447b.zip/node_modules/undici-types/",\
           "packageDependencies": [\
