@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@hmcts/nodejs-logging", "npm:4.0.4"],\
             ["@hmcts/properties-volume", "npm:1.2.0"],\
             ["@types/body-parser", "npm:1.19.5"],\
+            ["@types/chai", "npm:5.0.0"],\
             ["@types/chai-as-promised", "npm:8.0.1"],\
             ["@types/config", "npm:3.3.5"],\
             ["@types/cookie-parser", "npm:1.4.7"],\
@@ -9496,7 +9497,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/chai-as-promised-virtual-e43032135d/0/cache/chai-as-promised-npm-8.0.0-cafe64999f-89a1b97021.zip/node_modules/chai-as-promised/",\
           "packageDependencies": [\
             ["chai-as-promised", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:8.0.0"],\
-            ["@types/chai", null],\
+            ["@types/chai", "npm:5.0.0"],\
             ["chai", "npm:4.5.0"],\
             ["check-error", "npm:2.1.1"]\
           ],\
@@ -10004,6 +10005,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@hmcts/nodejs-logging", "npm:4.0.4"],\
             ["@hmcts/properties-volume", "npm:1.2.0"],\
             ["@types/body-parser", "npm:1.19.5"],\
+            ["@types/chai", "npm:5.0.0"],\
             ["@types/chai-as-promised", "npm:8.0.1"],\
             ["@types/config", "npm:3.3.5"],\
             ["@types/cookie-parser", "npm:1.4.7"],\
@@ -20187,7 +20189,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/sinon-chai-virtual-3dc759d0ac/0/cache/sinon-chai-npm-4.0.0-62a4c869d9-3c2f4eddff.zip/node_modules/sinon-chai/",\
           "packageDependencies": [\
             ["sinon-chai", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:4.0.0"],\
-            ["@types/chai", null],\
+            ["@types/chai", "npm:5.0.0"],\
             ["@types/sinon", null],\
             ["chai", "npm:4.5.0"],\
             ["sinon", "npm:18.0.1"]\
