@@ -18,7 +18,7 @@
     "test:routes": "jest -c jest.routes.config.js",
     "test:a11y": "yarn build && yarn rebuild puppeteer && jest --detectOpenHandles --forceExit -c jest.a11y.config.js --maxWorkers 15",
     "test:smoke": "NODE_TLS_REJECT_UNAUTHORIZED=0 jest -c jest.smoke.config.js",
-    "test:functional": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs --config ./src/test/functional/codecept.conf.js run --steps",
+    "test:functional": "NODE_TLS_REJECT_UNAUTHORIZED=0 codeceptjs run --steps",
     "cichecks": "yarn install && yarn build && yarn rebuild puppeteer && yarn lint && yarn test && yarn test:routes && yarn test:a11y",
     "prepare": "husky install"
   },
@@ -41,7 +41,7 @@
     "@types/nunjucks": "^3.2.1",
     "@types/require-directory": "^2.1.2",
     "@types/serve-favicon": "^2.5.3",
-    "applicationinsights": "^3.0.0",
+    "applicationinsights": "3.2.2",
     "axios": "^1.0.0",
     "body-parser": "^1.20.0",
     "config": "^3.3.8",
@@ -71,6 +71,7 @@
     "@babel/eslint-parser": "^7.18.9",
     "@babel/preset-env": "^7.19.0",
     "@codeceptjs/configure": "^1.0.0",
+    "@types/chai": "^5.0.0",
     "@types/chai-as-promised": "^8.0.0",
     "@types/jest": "^29.5.2",
     "@types/supertest": "^6.0.0",
@@ -99,8 +100,9 @@
     "nock": "^13.2.9",
     "nodemon": "^3.0.0",
     "pa11y": "^6.2.3",
-    "playwright": "^1.33.0",
+    "playwright": "^1.47.0",
     "prettier": "^2.7.1",
+    "react-native": "^0.74.5",
     "request": "^2.88.2",
     "sass": "^1.54.9",
     "sass-loader": "^16.0.0",
@@ -121,6 +123,7 @@
     "qs": "^6.9.7",
     "json5": "^2.0.0",
     "http-cache-semantics": "^4.1.1",
+    "path-to-regexp": "0.1.10",
     "cookiejar": "^2.1.4",
     "ip": "^2.0.1",
     "tar": "7.4.3",
@@ -130,5 +133,5 @@
     "*.{js,ts}": "eslint --cache --fix",
     "*.{js,ts,css,md,html,json}": "prettier --write"
   },
-  "packageManager": "yarn@3.8.5"
+  "packageManager": "yarn@4.5.0"
 }
