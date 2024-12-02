@@ -84,7 +84,6 @@
     "chokidar": "^4.0.0",
     "codeceptjs": "^3.3.6",
     "copy-webpack-plugin": "9.1.0",
-    "cross-spawn": "7.0.6",
     "css-loader": "^7.0.0",
     "debug": "^4.3.4",
     "eslint": "^8.55.0",
@@ -128,7 +127,8 @@
     "cookiejar": "^2.1.4",
     "ip": "^2.0.1",
     "tar": "7.4.3",
-    "@grpc/grpc-js": "1.12.2"
+    "@grpc/grpc-js": "1.12.2",
+    "cross-spawn": "7.0.6"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix",
