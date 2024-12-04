@@ -1,6 +1,6 @@
 #!groovy
 
-@Library("Infrastructure@DTSPO-22692/update-chart-location")
+@Library("Infrastructure")
 
 def type = "nodejs"
 def product = "plum"
