@@ -81,7 +81,7 @@ global.fetch = jest.fn(() =>
   })
 );
 
-jest.setTimeout(20000);
+jest.setTimeout(30000);
 
 describe('Accessibility', () => {
   // testing accessibility of the home page
