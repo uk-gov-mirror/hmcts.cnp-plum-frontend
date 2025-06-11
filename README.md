@@ -120,7 +120,7 @@ There is a configuration section related with those headers, where you can speci
 
 - `referrerPolicy` - value of the `Referrer-Policy` header
 
-Here's an example setup:
+Here's an example setup: test
 
 ```json
     "security": {
