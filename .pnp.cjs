@@ -83,6 +83,7 @@ const RAW_RUNTIME_STATE =
           ["husky", "npm:9.1.7"],\
           ["jest", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:29.7.0"],\
           ["jest-html-reporter", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:3.10.2"],\
+          ["jest-util", "npm:29.7.0"],\
           ["jquery", "npm:3.7.1"],\
           ["js-yaml", "npm:4.1.0"],\
           ["lint-staged", "npm:15.5.2"],\
@@ -10139,6 +10140,7 @@ const RAW_RUNTIME_STATE =
           ["husky", "npm:9.1.7"],\
           ["jest", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:29.7.0"],\
           ["jest-html-reporter", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:3.10.2"],\
+          ["jest-util", "npm:29.7.0"],\
           ["jquery", "npm:3.7.1"],\
           ["js-yaml", "npm:4.1.0"],\
           ["lint-staged", "npm:15.5.2"],\
@@ -20974,7 +20976,7 @@ const RAW_RUNTIME_STATE =
           ["esbuild", null],\
           ["fast-json-stable-stringify", "npm:2.1.0"],\
           ["jest", "virtual:8ddb9ae111987cc7eb1015abebd4477432a19cb2d44600083d31bb2a75e889c37238dc2576e40813725bca86bee2b9b65f12c8dfefba8e3074982e04a7ae5cbd#npm:29.7.0"],\
-          ["jest-util", null],\
+          ["jest-util", "npm:29.7.0"],\
           ["json5", "npm:2.2.3"],\
           ["lodash.memoize", "npm:4.1.2"],\
           ["make-error", "npm:1.3.6"],\
