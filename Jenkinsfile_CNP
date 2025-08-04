@@ -5,7 +5,7 @@
 @Library('Infrastructure@add-perftest-vars') _
 
 def type = "nodejs"
-def product = "plum"
+//def product = "plum"
 def component = "frontend"
 def expiresAfter = "3000-01-01"
 
