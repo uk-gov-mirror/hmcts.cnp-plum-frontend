@@ -1,7 +1,7 @@
 #!groovy
 
 //@Library("Infrastructure")
-@Library('Infrastructure@add-perftest-vars') _ 
+@Library('Infrastructure@add-perftest-vars') _
 
 def type = "nodejs"
 def product = "plum"
