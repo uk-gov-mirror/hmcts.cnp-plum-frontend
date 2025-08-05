@@ -1,7 +1,6 @@
 #!groovy
 
 //@Library("Infrastructure")
-
 @Library('Infrastructure@add-perftest-vars') _ 
 
 def type = "nodejs"
@@ -12,10 +11,6 @@ def expiresAfter = "3000-01-01"
 def secrets = [ 'plumsi-${env}':
   [
     secret('AppInsightsInstrumentationKey', 'APPINSIGHTS_INSTRUMENTATIONKEY')
-    //secret('perf-synthetic-monitor-token', 'PERF_SYNTHETIC_MONITOR_TOKEN'),
-	  //secret('perf-metrics-token', 'PERF_METRICS_TOKEN'),
-	  //secret('perf-event-token', 'PERF_EVENT_TOKEN'),
-    //secret('perf-synthetic-update-token', 'PERF_SYNTHETIC_UPDATE_TOKEN')
   ]
 ]
 
@@ -34,7 +29,7 @@ withPipeline(type, product, component) {
   loadVaultSecrets(secrets)
   disableLegacyDeployment()
   expires(expiresAfter)
-  enablePerformanceTestStages([configPath: 'src/TESTCONFIGPATH.groovy'])
+  enablePerformanceTestStages()
 
   afterAlways('build') {
     yarnBuilder.yarn('rebuild puppeteer')
