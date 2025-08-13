@@ -1,7 +1,6 @@
 #!groovy
 
-//@Library("Infrastructure")
-@Library('Infrastructure@add-perftest-vars') _
+@Library("Infrastructure")
 
 def type = "nodejs"
 def product = "plum"
@@ -29,7 +28,6 @@ withPipeline(type, product, component) {
   loadVaultSecrets(secrets)
   disableLegacyDeployment()
   expires(expiresAfter)
-  enablePerformanceTestStages()
 
   afterAlways('build') {
     yarnBuilder.yarn('rebuild puppeteer')
