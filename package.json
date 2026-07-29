@@ -126,7 +126,7 @@
   "resolutions": {
     "picomatch": "4.0.4",
     "undici": "^7.18.2",
-    "tar": "7.5.19",
+    "tar": "7.5.21",
     "table/ajv": "8.20.0",
     "fast-uri": "3.1.4",
     "@grpc/proto-loader/protobufjs": "7.6.5",
@@ -140,7 +140,8 @@
     "cosmiconfig/js-yaml": "4.3.0",
     "mocha/js-yaml": "4.3.0",
     "glob/minimatch": "10.2.5",
-    "brace-expansion": "5.0.7",
+    "brace-expansion": "5.0.8",
+    "postcss": "8.5.18",
     "globals": "17.6.0",
     "@opentelemetry/instrumentation": "0.218.0",
     "semver": "^7.5.3",
