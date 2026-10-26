@@ -42,7 +42,7 @@
     "@types/serve-favicon": "^2.5.3",
     "applicationinsights": "3.17.0",
     "axios": "^1.19.0",
-    "body-parser": "^2.3.0",
+    "body-parser": "^2.4.0",
     "config": "^4.0.0",
     "connect-redis": "^7.1.0",
     "cookie-parser": "^1.4.7",
@@ -124,6 +124,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "resolutions": {
+    "@azure/msal-node": "7.1.0",
     "moment": "2.31.0",
     "picomatch": "4.0.7",
     "undici": "^8.0.0",

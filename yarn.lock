@@ -403,24 +403,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@azure/msal-node@npm:^3.5.0":
-  version: 3.6.1
-  resolution: "@azure/msal-node@npm:3.6.1"
-  dependencies:
-    "@azure/msal-common": "npm:15.7.1"
-    jsonwebtoken: "npm:^9.0.0"
-    uuid: "npm:^8.3.0"
-  checksum: 10/de7dcf032d2e50404bf9ba139ea8c49d26d650b220f33ac701cdebb234425ba627a19a83c2aa38f212fc97dfef051abc4221bf63a45ea34fc3ab0445f8bda828
+"@azure/msal-common@npm:16.14.2":
+  version: 16.14.2
+  resolution: "@azure/msal-common@npm:16.14.2"
+  checksum: 10/db1c5986485470a92bb5ae08d088945eadf76bdcba223e685c03d7e3264d0df4353ca64b32a94ee928a58ca6ed847106c956a03b1d385ec9d91c1454a817ec90
   languageName: node
   linkType: hard
 
-"@azure/msal-node@npm:^5.1.0":
-  version: 5.5.0
-  resolution: "@azure/msal-node@npm:5.5.0"
+"@azure/msal-node@npm:7.1.0":
+  version: 7.1.0
+  resolution: "@azure/msal-node@npm:7.1.0"
   dependencies:
-    "@azure/msal-common": "npm:16.12.0"
+    "@azure/msal-common": "npm:16.14.2"
     jsonwebtoken: "npm:^9.0.0"
-  checksum: 10/79a0e7442803f0ed79c70825a0bec70e541917e51cc303d58e9eae8867af0122fe66b2b27cef5f1ff2df62d7ebc55366e8e261820a5ed8e42aa870ba47a8951f
+  checksum: 10/464b834b2eaf8d35d0d94cb0c73038e7be72f8e4da310fc203b7747abb97cdf64bf0eac061e3e730c8040d4e0a37d2c390fd0db6de47598d878ad46a0eb1cd1d
   languageName: node
   linkType: hard
 
@@ -7329,7 +7325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"body-parser@npm:2.3.0, body-parser@npm:^2.3.0":
+"body-parser@npm:2.3.0":
   version: 2.3.0
   resolution: "body-parser@npm:2.3.0"
   dependencies:
@@ -7343,6 +7339,23 @@ __metadata:
     raw-body: "npm:^3.0.2"
     type-is: "npm:^2.1.0"
   checksum: 10/94f741ff525358dd0d47f0a042936dc61b9d2e348ff1228c5ffd79f1902c673a317bbb9495b3f7d1db4483befe6ffed1c42bc4cdd8da8f41690530810cfe4dad
+  languageName: node
+  linkType: hard
+
+"body-parser@npm:^2.4.0":
+  version: 2.4.0
+  resolution: "body-parser@npm:2.4.0"
+  dependencies:
+    bytes: "npm:^3.1.2"
+    content-type: "npm:^2.1.0"
+    debug: "npm:^4.4.3"
+    http-errors: "npm:^2.0.1"
+    iconv-lite: "npm:^0.7.3"
+    on-finished: "npm:^2.4.1"
+    qs: "npm:^6.16.1"
+    raw-body: "npm:^3.0.2"
+    type-is: "npm:^2.1.0"
+  checksum: 10/e34971abf7051529d4fae37d3714382e7fa8198bc969f1ec4932af48aef53bba71523545c034ce04fa808d3b15e0d63849e6e93b4f1131d65227e1f414437f68
   languageName: node
   linkType: hard
 
@@ -8069,7 +8082,7 @@ __metadata:
     axios: "npm:^1.19.0"
     axios-debug-log: "npm:^1.0.0"
     babel-loader: "npm:^10.0.0"
-    body-parser: "npm:^2.3.0"
+    body-parser: "npm:^2.4.0"
     chai: "npm:^4.3.6"
     chai-as-promised: "npm:^8.0.0"
     chokidar: "npm:^5.0.0"
@@ -8421,6 +8434,13 @@ __metadata:
   version: 2.0.0
   resolution: "content-type@npm:2.0.0"
   checksum: 10/0bbb276b790ba7e86c479c7d69fae1861b2e908ff3ce2cb01975b516f93eede2216d242902ed6c5b15cd554014611ce9dfdcf51cd35b16569e45a979e50d0cef
+  languageName: node
+  linkType: hard
+
+"content-type@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "content-type@npm:2.1.0"
+  checksum: 10/8aac907922538f430d8bfab1d8fe2fbdc1eb890a0fa7a619f712db4bfefe24be951ba464f972007df64840c775bf2db284ca8223547ac5317ad9ab2ee8e6501b
   languageName: node
   linkType: hard
 
@@ -11297,6 +11317,15 @@ __metadata:
   dependencies:
     safer-buffer: "npm:>= 2.1.2 < 3.0.0"
   checksum: 10/24c937b532f868e938386b62410b303b7c767ce3d08dc2829cbe59464d5a26ef86ae5ad1af6b34eec43ddfea39e7d101638644b0178d67262fa87015d59f983a
+  languageName: node
+  linkType: hard
+
+"iconv-lite@npm:^0.7.3":
+  version: 0.7.3
+  resolution: "iconv-lite@npm:0.7.3"
+  dependencies:
+    safer-buffer: "npm:>= 2.1.2 < 3.0.0"
+  checksum: 10/b88a3f4527795c96854743bcdcdd03e0083ff5f1c072cb13d3e27c67cd276efd9a2a364922cb836538e976456f82323d645f7ea91d5bc8da1f000dc16742a0aa
   languageName: node
   linkType: hard
 
@@ -18487,15 +18516,6 @@ __metadata:
   bin:
     uuid: ./bin/uuid
   checksum: 10/4f2b86432b04cc7c73a0dd1bcf11f1fc18349d65d2e4e32dd0fc658909329a1e0cc9244aa93f34c0cccfdd5ae1af60a149251a5f420ec3ac4223a3dab198fb2e
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^8.3.0":
-  version: 8.3.2
-  resolution: "uuid@npm:8.3.2"
-  bin:
-    uuid: dist/bin/uuid
-  checksum: 10/9a5f7aa1d6f56dd1e8d5f2478f855f25c645e64e26e347a98e98d95781d5ed20062d6cca2eecb58ba7c84bc3910be95c0451ef4161906abaab44f9cb68ffbdd1
   languageName: node
   linkType: hard
 
