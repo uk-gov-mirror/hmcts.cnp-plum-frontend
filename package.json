@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "@azure/logger": "1.4.0",
-    "@codeceptjs/allure-legacy": "^1.0.2",
     "@hmcts/info-provider": "^1.4.0",
     "@hmcts/nodejs-healthcheck": "^1.8.6",
     "@hmcts/nodejs-logging": "^4.0.4",
@@ -81,6 +80,7 @@
     "@types/supertest": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
+    "allure-codeceptjs": "^3.14.0",
     "axios-debug-log": "^1.0.0",
     "babel-loader": "^10.0.0",
     "chai": "^4.3.6",
@@ -125,7 +125,6 @@
   },
   "resolutions": {
     "@azure/msal-node": "7.1.0",
-    "allure-js-commons": "3.14.0",
     "body-parser": "2.4.0",
     "moment": "2.31.0",
     "picomatch": "4.0.7",
